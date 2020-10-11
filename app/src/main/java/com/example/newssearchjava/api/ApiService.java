@@ -1,6 +1,6 @@
 package com.example.newssearchjava.api;
 
-import com.example.newssearchjava.model.Everything;
+import com.example.newssearchjava.model.topheadlines.TopHeadlines;
 
 import retrofit2.Call;
 
@@ -13,7 +13,11 @@ public class ApiService {
         return apiInterface;
     }
 
-    public static Call<Everything> getEverything(String searchItem, String apiKey) {
-        return ApiService.getApiInterface().getEverything(searchItem, apiKey);
+    public static Call<TopHeadlines> getAllNews(String country, String apiKey) {
+        return ApiService.getApiInterface().getAllNews(country, apiKey);
+    }
+
+    public static Call<TopHeadlines> getSearchNews(String searchItem, String country, String apiKey) {
+        return ApiService.getApiInterface().getSearchNews(searchItem, country, apiKey);
     }
 }

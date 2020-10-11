@@ -43,7 +43,7 @@ public class EverythingFragment extends Fragment {
         recyclerView = root.findViewById(R.id.recyclerviewEverything);
 
         searchViewmodel = new ViewModelProvider(this).get(SearchViewmodel.class);
-//        searchViewmodel.loadResults();
+        searchViewmodel.loadAllNews();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(searchAdapter);
@@ -80,7 +80,7 @@ public class EverythingFragment extends Fragment {
                 @Override
                 public boolean onQueryTextSubmit(String s) {
                     Log.i("onQueryTextSubmit", s);
-                    searchViewmodel.loadResults(s);
+                    searchViewmodel.loadSearchNews(s);
                     return false;
                 }
 
